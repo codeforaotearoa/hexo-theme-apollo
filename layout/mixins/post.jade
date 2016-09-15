@@ -1,8 +1,5 @@
 mixin postInfo(item)
     .post-info
-        if (author && item.author)
-            a(href= url_for('author/' + item.authorId))
-              h4.author=item.author.name
         != full_date(item.date, 'll')
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) Date
@@ -45,6 +42,9 @@ mixin post(item)
         article.post-block
             h1.post-title
                 != item.title
+            if (author && item.author)
+              a(href= url_for('author/' + item.authorId))
+                h4.author=item.author.name
             +postInfo(item)
             .post-content
                 != item.content
