@@ -1,9 +1,12 @@
 mixin postInfo(item)
     .post-info
+        if (author && item.author)
+          a(href= url_for('author/' + item.authorId))
+            h4=item.author.name
         != full_date(item.date, 'll')
         if item.from && (is_home() || is_post())
-            a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
-
+            a.post-from(href=item.from target="_blank" title=item.from) Date
+            
 //- Index Page
 mixin posts()
     ul.home.post-list
@@ -28,7 +31,7 @@ mixin postList()
             - var itemYear = date(item.date, 'YYYY') - 0;
             - change = year !== itemYear;
             - year = change ? itemYear : year;
-            if change 
+            if change
                 h2.archive-year!= year
             .post-item
                 +postInfo(item)
