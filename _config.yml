@@ -1,11 +1,11 @@
 menu:
     Blog: /
-    Archive: /archives/
+    Archive: /Inside-LINZ/archives/
     GitHub: https://github.com/codeforaotearoa
-    Rss: /atom.xml
+    Rss: /Inside-LINZ/atom.xml
 
-favicon: favicon.png
-logo: favicon.png
+favicon: /Inside-LINZ/favicon.png
+logo: /Inside-LINZ/favicon.png
 
 # Comment
 # e.g disqus: seansun
